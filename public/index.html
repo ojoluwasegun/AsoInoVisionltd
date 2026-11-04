@@ -92,7 +92,7 @@ var T={home:"Home",services:"Services",industries:"Industries",about:"About",aud
 function r(){var h=(location.hash||"#home").slice(1);if(!T[h])h="home";document.querySelectorAll(".view").forEach(function(e){e.classList.toggle("on",e.id==="v-"+h)});document.querySelectorAll(".nav nav a").forEach(function(a){if(a.dataset.v===nav(h))a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});document.title=(h=="home"?"":T[h]+" | ")+"ASO INOVISION";if(h=="apply")syncJob();window.scrollTo(0,0)}
 addEventListener("hashchange",r);r();document.querySelectorAll(".sh").forEach(function(a){var u=encodeURIComponent(location.href.split("#")[0]);a.href=a.dataset.s=="li"?"https://www.linkedin.com/sharing/share-offsite/?url="+u:"https://www.facebook.com/sharer/sharer.php?u="+u});
 
-var API="";  // after deploying the Supabase functions, set to https://YOUR-PROJECT.supabase.co/functions/v1
+var API="var API = "https://qulelmjkomznfhghtjml.supabase.co/functions/v1";";  // after deploying the Supabase functions, set to https://YOUR-PROJECT.supabase.co/functions/v1
 var EMAIL="asoinovisionpro@gmail.com",WA="2349068290425",SEL=1;
 function nav(h){return h=="audit"?"insights":/^(job|apply)/.test(h)?"careers":h}
 function syncJob(){var s=document.getElementById("role");if(s)s.value=String(SEL);toggleIntern()}
